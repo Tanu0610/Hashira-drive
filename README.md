@@ -1,37 +1,45 @@
-Polynomial-Solver
-Java implementation of Polynomial Reconstruction using Lagrange Interpolation from JSON test cases (Base Conversion + Fraction Support).
+**Lagrange Interpolation in Java**
 
-Polynomial Reconstruction using Lagrange Interpolation (Java)
-📌 Project Overview
-This project reconstructs a polynomial of degree (k-1) using k roots provided in JSON format.
-Each root contains:
+This project implements Lagrange Interpolation in Java to compute the polynomial equation that passes through a given set of data points.
 
-Base of the number system
-Encoded value
-Index representing x-coordinate
-The program:
+**📌 What is Lagrange Interpolation?**
 
-Converts values from different bases to decimal
-Selects first k valid roots
-Applies Lagrange Interpolation
-Outputs exact polynomial coefficients (Highest → Constant)
-Supports large numbers and fractional coefficients
-🧮 Problem Statement
-Given:
+Lagrange Interpolation is a polynomial interpolation method used to find a polynomial that exactly fits a set of given data points.
 
-n total roots
-k minimum roots required
-k = m + 1 (where m = degree of polynomial)
-Reconstruct the polynomial:
+Given n data points:
 
-f(x) = a₀xⁿ + a₁xⁿ⁻¹ + ... + constant
+(x₀, y₀), (x₁, y₁), ..., (xₙ, yₙ)
 
-⚙ Technologies Used
-Java (OpenJDK 25)
-BigInteger
-BigDecimal
-Fraction arithmetic
-Lagrange Interpolation
-JSON Parsing
-📂 Project Structure
-PolynomialProject/ │ ├── Main.java ├── PolynomialSolver.java ├── input.json └── README.md
+The Lagrange polynomial is defined as:
+
+P(x) = Σ ( yi * Li(x) )
+
+Where,
+
+Li(x) = Π (x - xj) / (xi - xj),  for j ≠ i
+
+This method guarantees a unique polynomial of degree at most n-1.
+
+**🚀 Features**
+
+Accepts user-defined data points
+
+Computes interpolated value for any given x
+
+Generates full polynomial equation
+
+Simple and readable Java implementation
+
+No external libraries required
+
+**🛠️ Technologies Used**
+
+Java (JDK 8 or higher)
+
+Standard Java libraries only
+
+**📂 Project Structure**
+LagrangeInterpolation/
+│── src/
+│   └── LagrangeInterpolation.java
+│── README.md
